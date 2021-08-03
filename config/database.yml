@@ -15,7 +15,7 @@ development:
   database: mysms_development
   pool: 5
   username: root
-  password: G0n3ad5o7
+ password: <%= ENV['DB_PASSWORD'] || 'example' %>
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
