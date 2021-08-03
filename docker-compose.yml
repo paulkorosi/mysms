@@ -4,7 +4,7 @@ services:
   database:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: letmein™
+      MYSQL_ROOT_PASSWORD: example
     restart: "always" 
     ports:
       - "33060:3306"
