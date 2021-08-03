@@ -7,6 +7,6 @@ MySMS (My Student Management System) is a Rails project for developers to learn 
 * Docker
 * Docker Compose
 
-## Installing <project_name>
+## Installing MySMS
 
-From a terminal window in the project root, type "docker compose up" to build the project
+From a terminal window in the project root, type "docker compose up" to build the project then navigate to http://localhost:3000
