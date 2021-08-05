@@ -15,8 +15,8 @@ development:
   database: mysms_development
   pool: 5
   username: root
- password: <%= ENV['DB_PASSWORD'] || 'example' %>
-  host: localhost
+  password: <%= ENV['DB_PASSWORD'] || 'example' %>
+  host: <%= ENV['DB_HOST'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,7 +29,7 @@ test:
   pool: 5
   username: root
   password: <%= ENV['DB_PASSWORD'] || 'example' %>
-  host: localhost
+  host: <%= ENV['DB_HOST'] %>
 
 production:
   adapter: mysql2
