@@ -7,7 +7,7 @@ services:
       MYSQL_ROOT_PASSWORD: example
     restart: "always" 
     ports:
-      - "33060:3306"
+      - "3306:3306"
     volumes:
       - "C:/DockerData/MySMS:/var/lib/mysql"
     
@@ -17,6 +17,12 @@ services:
       dockerfile: ./Dockerfile
     depends_on:
       - "database"
+    environment:
+        DB_HOST: database
+        DB_USER: root
+        DB_PASSWORD: example
+        DB_NAME: mysms_development
+        DB_PORT: 3306
     ports:
     - "3000:3000"
-  command: bundle exec rails s
+    command: bundle exec rails s
