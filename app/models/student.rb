@@ -10,4 +10,8 @@ class Student < ActiveRecord::Base
 
   # allow for 'not stated', male, female, and other
   validates :gender, inclusion: { in: %w(m f x) }, allow_nil: true
+
+  def full_name
+    [title, first_name, middle_name, last_name].reject(&:blank?).join(" ")
+  end
 end
