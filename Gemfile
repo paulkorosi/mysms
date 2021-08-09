@@ -11,6 +11,7 @@ group :development, :test do
   gem 'test-unit', '~> 3.0'
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'faker', '~> 2.2.1'
+  gem 'rspec-rails', '~> 3.0.0'
 end
 
 # Gems used only for assets and not required
