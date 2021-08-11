@@ -4,7 +4,7 @@ Mysms::Application.routes.draw do
 
   resources :home, only: [:index]
 
-  resources :student, only: [:index]
+  resources :students, only: [:index]
 
   
 end
