@@ -1,0 +1,22 @@
+<h1>Students</h1>
+
+<table border="0" cellpadding="2" cellspacing="0">
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>DOB</th>
+    <th>Email Address</th>
+  </tr>
+
+<% @students.each do |s| %>
+
+  <tr>
+    <td><%=s.full_name%></td>
+    <td><%=s.format_gender%></td>
+    <td><%=s.birth_date&.strftime("%d/%m/%Y") %></td>
+    <td><%=s.email%></td>
+  </tr>
+
+<% end %>
+
+</table>

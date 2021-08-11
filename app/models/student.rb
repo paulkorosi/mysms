@@ -14,4 +14,17 @@ class Student < ActiveRecord::Base
   def full_name
     [title, first_name, middle_name, last_name].reject(&:blank?).join(" ")
   end
+
+  def format_gender
+    if gender.present? 
+      hash = {
+        "m" => "Male",
+        "f" => "Female",
+        "o" => "Other"
+      }
+      hash[gender]
+    else
+     "Not specified"
+    end
+  end
 end
