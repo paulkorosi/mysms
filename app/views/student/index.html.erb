@@ -1,24 +1,29 @@
 <h1>Students</h1>
 
-<table border="0" cellpadding="2" cellspacing="0">
-  <tr>
-    <th>Name</th>
-    <th>Gender</th>
-    <th>DOB</th>
-    <th>Email Address</th>
-  </tr>
+<table border="0" cellpadding="5" cellspacing="0" class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Email Address</th>
+    </tr>
+  </thead>
 
-<% @students.each do |s| %>
+  <tbody>
+  <% @students.each do |s| %>
 
-  <tr>
-    <td><%=s.full_name%></td>
-    <td><%=s.format_gender%></td>
-    <td><%=s.birth_date&.strftime("%d/%m/%Y") %></td>
-    <td><%=s.email%></td>
-  </tr>
+    <tr>
+      <td><%=s.full_name%></td>
+      <td><%=s.format_gender%></td>
+      <td><%=s.birth_date&.strftime("%d/%m/%Y") %></td>
+      <td><%=s.email%></td>
+    </tr>
 
-<% end %>
-
+  <% end %>
+  </tbody>
 </table>
 
-<%= will_paginate @students %>
+<div class="pagination">
+  <%= will_paginate @students, renderer: BootstrapPagination::Rails, :previous_label => 'Prev', :next_label => 'Next' %>
+</div>
